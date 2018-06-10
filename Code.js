@@ -318,6 +318,11 @@ function numberHeadings(style){
     if (eLevel == 0) {
       continue;
     }
+
+    // If heading element is empty, just skip it
+    if ( e.getText()+'' == '' ) {
+      continue;
+    }
     
     // Get text
     var eText = e.getText()+'';
