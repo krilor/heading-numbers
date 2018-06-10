@@ -18,30 +18,12 @@ function onOpen(e) {
   .addItem('i.ii.iii', 'menuCallbackAdd4')
   .addItem('I.II.III', 'menuCallbackAdd5')
   .addItem('1) a) b)', 'menuCallbackAdd6')
-  
-  // authMode limitations
-  // https://developers.google.com/apps-script/add-ons/lifecycle
-  if (e && e.authMode == ScriptApp.AuthMode.NONE) {
-    // Not authorized - add general Custom
-    menu.addItem('Custom', 'menuCallbackCustom');
-  } else {
-
-    // Check for premium user
-    if (isPremium(false)) {
-      menu.addItem('Custom', 'menuCallbackEditCustom')
-    } else {
-      menu.addItem('Custom (Premium)', 'menuCallbackCustom');
-    }
-    
-  }
-  
-  // Add the rest of the menu
-  menu.addSeparator()
+  .addItem('Custom', 'menuCallbackEditCustom')
+  .addSeparator()
   .addItem('Update', 'menuCallbackUpdate')
   .addItem('Clear', 'menuCallbackClear')
   .addToUi();
   
-  // Dynamic menu creation based on user auth
 }
 
 /**
@@ -123,22 +105,6 @@ function menuCallbackAdd7(){
 }
 
 
-// Callback for custom function for unauthed and non-premimum users
-function menuCallbackCustom(){
-  if(isPremium()){
-    menuCallbackEditCustom();
-  } else {
-    
-    var html = HtmlService.createHtmlOutputFromFile('upgradeToPremium')
-      .setSandboxMode(HtmlService.SandboxMode.NATIVE)
-      .setWidth(400)
-      .setHeight(170);
-  
-    DocumentApp.getUi()
-      .showModalDialog(html, 'Custom numbering styles');
-  }
-}
-
 // Callback to add custom - currently used by the edit screen.
 function menuCallbackAddCustom() {
   
@@ -146,11 +112,8 @@ function menuCallbackAddCustom() {
   if(!PropertiesService.getDocumentProperties().getProperty('h1')) {
     setPreferences(1,1,1,1,1,1,true,1,false,'','');
   }
-  if(isPremium()) {
-    numberHeadings(99);
-  } else {
-    menuCallbackCustom();
-  }
+  numberHeadings(99);
+
 }
 
 // Update the heading numbers
@@ -178,58 +141,15 @@ function menuCallbackEditCustom() {
   if(!PropertiesService.getDocumentProperties().getProperty('h1')) {
     setPreferences(1,1,1,1,1,1,true,1,false,'','');
   }
-    if(isPremium()) {
-      
-      var html = HtmlService.createHtmlOutputFromFile('customStyleDialog')
-      .setSandboxMode(HtmlService.SandboxMode.NATIVE)
-      .setWidth(700)
-      .setHeight(288);
-      
-      DocumentApp.getUi()
-        .showModalDialog(html, 'Custom numbering style');
-      
-  } else {
-    menuCallbackCustom();
-  }
 
-}
+  var html = HtmlService.createHtmlOutputFromFile('customStyleDialog')
+  .setSandboxMode(HtmlService.SandboxMode.NATIVE)
+  .setWidth(700)
+  .setHeight(288);
 
-/**
- * Checks if the current user is allowed to use the premium features
- * @param {boolean,optional} authOk - if script can access getEmail() - default true - dependent on Authmode
- * @return {boolean} true if user is allowed for premium, false if not
- */
+  DocumentApp.getUi()
+    .showModalDialog(html, 'Custom numbering style');
 
-function isPremium(authOk) {
-  
-  // Set default params
-  authOk = (typeof authOk === "undefined") ? true : authOk; //default is true
-  
-  // Get userEmail
-  var userEmail = Session.getEffectiveUser().getEmail();
-  
-  // UserProps
-  var userProps = PropertiesService.getUserProperties();
-  var userPremium = ( userProps.getProperty('premiumUser') == "true" ? true : false );
-  
-  //Script properties
-  var scriptProperties = PropertiesService.getScriptProperties();
-  
-  if (authOk) {
-    if ( userEmail ){
-      if ( scriptProperties.getProperty('usr'+userEmail) == '1' ) {
-        userProps.setProperty("premiumUser", "true");
-        return true;    
-      } else {
-        userProps.setProperty("premiumUser", "false");
-      }
-    }
-    
-  } else if (userPremium) {
-    return true;
-  }
-
-  return false; // default
 }
 
 /**
