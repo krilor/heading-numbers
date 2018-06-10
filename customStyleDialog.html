@@ -1,0 +1,540 @@
+<!--<!DOCTYPE html>-->
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+
+<style>
+
+/**
+ * Preview headings
+ */
+
+div.wrap-preview {
+  width: 180px;
+  padding: 1em;
+  border: 1px solid grey;
+}
+
+ul.heading-preview, ul.heading-preview li {
+  width: 100%;
+  min-width:100%;
+}
+ul.heading-preview {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.heading-preview li {
+  margin: 0;
+  background-color: white;
+  background-image: -webkit-linear-gradient(top, white, white 40%, #D4D4D4 40%, #D4D4D4 60%,white 60%,white 100%);
+  background-image: -moz-linear-gradient(top, white, white 40%, #D4D4D4 40%, #D4D4D4 60%,white 60%,white 100%);
+  background-image: -o-linear-gradient(top, white, white 40%, #D4D4D4 40%, #D4D4D4 60%,white 60%,white 100%);
+  background-image: linear-gradient(to bottom, white, white 40%, #D4D4D4 40%, #D4D4D4 60%,white 60%,white 100%);
+  height:1.2em;
+}
+
+span#preview-h2 {
+  padding-left: 0.5em;
+}
+span#preview-h3 {
+  padding-left: 1em;
+}
+span#preview-h4 {
+  padding-left: 1.5em;
+}
+span#preview-h5 {
+  padding-left: 2em;
+}
+span#preview-h6 {
+  padding-left: 2.5em;
+}
+
+ul.heading-preview li span {
+  background-color: white;
+  padding-left: 0.0em;
+  padding-right: 0.4em;
+  height:1.2em;
+}
+
+/*
+* Grid stuff
+**/
+
+.container {
+  width: 100%;
+  min-width: 100%;
+}
+
+.column-2 {
+ width: 50%;
+ float:left;
+ display: block;
+}
+
+.column-3 {
+ height: 210px;
+ float:left;
+ display: block;
+}
+
+.column {
+ float:left;
+}
+
+ .row {
+   *zoom: 1;
+   display: block;
+ }
+
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+#main {
+  padding-right: 32px;
+  border-right: 1px solid #d2d2d2;
+}
+
+#col2 {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+#col2 .block + .block {
+  margin-top: 12px;
+}
+
+#col3 {
+ border-left:  1px solid #d2d2d2;
+ padding-left: 32px;
+}
+
+
+select {
+ margin-left: 0.5em;
+}
+.selectblock {
+ margin-top: 8px;
+}
+
+.selectblock:first-of-type {
+ margin-top: 0;
+}
+
+#buttonwrap {
+  margin-top: 35px;
+}
+
+/*
+* Form style
+**/
+select {
+  margin-right: 0.5em;
+}
+.clearlabel {
+  display: block;
+}
+
+/*.container.block {
+  height: 42px;
+}*/
+
+#message {
+color: #777;
+margin-left: 24px;
+line-height: 29px;
+}
+
+
+
+</style>
+
+  <div id="wrapper" class="container">
+   <form>
+    <div class="row">
+    <div id="main" class="column-3">
+    
+      <div class="block">
+        
+        <div class="selectblock">
+          <label for="select-h1">Heading 1</label>
+          <select class="prefinput" name="h1" id="select-h1">
+            <option value="1">1,2,3,...</option>
+            <option value="2">a,b,c,...</option>
+            <option value="3">A,B,C,...</option>
+            <option value="4">i,ii,iii,...</option>
+            <option value="5">I,II,III,...</option>
+            <option value="9">None</option>
+          </select>
+        </div>
+        
+        <div class="selectblock">
+          <label for="select-h2">Heading 2</label>
+          <select class="prefinput" name="h2" id="select-h2">
+            <option value="1">1,2,3,...</option>
+            <option value="2">a,b,c,...</option>
+            <option value="3">A,B,C,...</option>
+            <option value="4">i,ii,iii,...</option>
+            <option value="5">I,II,III,...</option>
+            <option value="9">None</option>
+          </select>
+        </div>
+        
+        <div class="selectblock">
+          <label for="select-h3">Heading 3</label>
+          <select class="prefinput" name="h3" id="select-h3">
+            <option value="1">1,2,3,...</option>
+            <option value="2">a,b,c,...</option>
+            <option value="3">A,B,C,...</option>
+            <option value="4">i,ii,iii,...</option>
+            <option value="5">I,II,III,...</option>
+            <option value="9">None</option>
+          </select>
+        </div>
+        
+        <div class="selectblock">
+          <label for="select-h4">Heading 4</label>
+          <select class="prefinput" name="h4" id="select-h4">
+            <option value="1">1,2,3,...</option>
+            <option value="2">a,b,c,...</option>
+            <option value="3">A,B,C,...</option>
+            <option value="4">i,ii,iii,...</option>
+            <option value="5">I,II,III,...</option>
+            <option value="9">None</option>
+          </select>
+        </div>
+        
+        <div class="selectblock">
+          <label for="select-h5">Heading 5</label>
+          <select class="prefinput" name="h5" id="select-h5">
+            <option value="1">1,2,3,...</option>
+            <option value="2">a,b,c,...</option>
+            <option value="3">A,B,C,...</option>
+            <option value="4">i,ii,iii,...</option>
+            <option value="5">I,II,III,...</option>
+            <option value="9">None</option>
+          </select>
+        </div>
+        
+        <div class="selectblock">
+          <label for="select-h6">Heading 6</label>
+          <select class="prefinput" name="h6" id="select-h6">
+            <option value="1">1,2,3,...</option>
+            <option value="2">a,b,c,...</option>
+            <option value="3">A,B,C,...</option>
+            <option value="4">i,ii,iii,...</option>
+            <option value="5">I,II,III,...</option>
+            <option value="9">None</option>
+          </select>
+        </div>
+      </div>
+    </div> <!-- Column -->
+
+    <div id="col2" class="column-3">
+      <div class="block">
+        <label for="select-delimiter">Delimiter</label>
+        <select class="prefinput" name="delimiter" id="select-delimiter">
+          <option value="1">.</option>
+          <option value="2">-</option>
+          <option value="3">:</option>
+          <option value="4">)</option>
+          <option value="5">Space</option>
+          <option value="6">None</option>
+        </select>
+      </div>
+
+      <div class="block">
+        <input class="prefinput" type="checkbox" id="trailing">
+        <label for="trailing">Trailing delimiter</label><br/>
+        <input class="prefinput" type="checkbox" id="inherit">
+        <label for="inherit">Inherit superlevels</label><br />
+        <input class="prefinput" type="checkbox" id="tabseparator">
+        <label for="inherit">Tab separator</label>
+      </div>
+        
+
+      <div class="block">
+        <label for="pre" class="clearlabel">Leading text</label>
+        <input class="prefinput" type="text" id="pre">
+      </div>
+        
+      <div class="block">
+        <label for="post" class="clearlabel">Trailing text</label>
+        <input class="prefinput" type="text" id="post">
+      </div>
+      
+    </div> <!-- Column -->
+    
+    <div id="col3" class="column-3">
+      <div class="block">
+      
+        <div class="wrap-preview">
+          <ul class="heading-preview">
+            <li><span id="preview-h1">1.</span></li>
+            <li><span id="preview-h2">1.1.</span></li>
+            <li><span id="preview-h3">1.1.1.</span></li>
+            <li><span id="preview-h4">1.1.1.1.</span></li>
+            <li><span id="preview-h5">1.1.1.1.1.</span></li>
+            <li><span id="preview-h6">1.1.1.1.1.1.</span></li>
+            <li><span id="preview-h1-2">2.</span></li>
+          </ul>
+        </div>
+        
+        <div id="guideline" class="block">
+          <p><i>Use the settings to edit your style</i></p>
+        </div>  
+        
+      </div>
+    </div>
+   </div>
+   <div class="row" id="buttonwrap">
+    <div class="block column">
+      <button class="blue" id="ok-done">Apply</button>
+      <button id="save-preferenses">Save settings</button>
+      <button id="cancel">Cancel</button>
+    </div>
+    <div id="message" class="column">
+      <!-- for saved and error messages -->
+    </div>
+   </div>
+  </form>
+  
+</div>
+ 
+ 
+<!--<input type="button" value="Close"
+  onclick="google.script.host.close()" />-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+
+<script>
+  /**
+ * Converts number to character 1 = a z = 26 or to roman
+ * @param {number} num Number to be converted
+ * @return {string} Character corresponding to number
+ */
+
+function int2lower(num){
+  if ( (num < 1) || (num > 27) ) { num = 45 - 96; }
+  return String.fromCharCode(96+num); 
+}
+function int2upper(num){
+  if ( (num < 1) || (num > 27) ) { num = 45 - 64; }
+  return String.fromCharCode(64+num); 
+}
+
+function int2roman(num) {
+  var lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1},
+      roman = '',
+      i;
+  for ( i in lookup ) {
+    while ( num >= lookup[i] ) {
+      roman += i;
+      num -= lookup[i];
+    }
+  }
+  return roman;
+}
+
+function int2romanlower(num) {
+  return int2roman(num).toLowerCase();
+}
+
+/**
+ * getNumber - get a number based
+ */
+
+function getNumber(num,style){
+  switch(style){
+    case 2:  
+      return int2lower(num);
+      break;
+    case 3:  
+      return int2upper(num);
+      break;
+    case 4:
+      return int2romanlower(num);
+      break;
+    case 5:
+      return int2roman(num);
+      break;
+    case 9:
+      return '';
+      break;
+    default:
+      return num+'';
+      break;
+  }
+}
+
+function getDelimiter(type){
+  var delimiters = [' ','.','-',':',')',' ',''];
+  return delimiters[type];
+}
+
+/**
+ * getNumbers - get the final txt
+ */
+function getNumbers(level,numbers,h1,h2,h3,h4,h5,h6,inherit,delimiter,trailing) {
+  
+  var txt = '';
+  var hStyles = [0,h1,h2,h3,h4,h5,h6];
+  var del = getDelimiter(delimiter);
+  
+  if(!inherit) { // Inherit
+    if (trailing) {
+      txt = getNumber(numbers[level],hStyles[level])+del;
+    } else {
+      txt = getNumber(numbers[level],hStyles[level]);
+    }
+  } else { // Inherit
+    for (var l = 1; l<level; l++) {
+      txt += getNumber(numbers[l],hStyles[l])+del;
+    }
+    
+    if (trailing) {
+      txt += getNumber(numbers[level],hStyles[level])+del;
+    } else {
+      txt += getNumber(numbers[level],hStyles[level]);
+    }
+  }
+  
+  return txt;
+}
+
+</script>
+
+<script>
+  /**
+   * On document load, assign click handlers to each button and try to load the
+   * user's origin and destination language preferences if previously set.
+   */
+  $( function() {
+  
+    // Resize modal to fit content
+    google.script.host.setHeight($("#wrapper").height() + 16);
+
+
+    // Get prefrence
+    google.script.run
+      .withFailureHandler(showError)
+      .withSuccessHandler(function(prefs){
+        loadPreferences(prefs);
+        document.getElementById("save-preferenses").disabled = true;
+      })
+      .getPreferences();   
+ 
+    $( ".prefinput" ).change(function() {
+      $('#message').empty();
+      updatePreview();
+      document.getElementById("save-preferenses").disabled = false;
+    });
+    
+    $("button#ok-done").click(function() {
+      $('#message').empty();
+      var p = getFormValues();
+      this.disabled = true;
+      google.script.run
+        .withSuccessHandler(function(){
+          google.script.run
+            .withSuccessHandler(function(){
+              google.script.host.close();
+            })
+            .menuCallbackAddCustom();
+        }).withFailureHandler(showError)
+        .withUserObject(this)
+        .setPreferences(p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing,p.pre,p.post,p.tabseparator);
+    });
+    $("button#save-preferenses").click(function() {
+      $('#message').empty();
+      var p = getFormValues();
+      this.disabled = true;
+      google.script.run
+        .withSuccessHandler(function(){
+          $('#message').append("Saved");
+         })
+        .withFailureHandler(showError)
+        .withUserObject(this)
+        .setPreferences(p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing,p.pre,p.post,p.tabseparator);   
+    });
+    
+    $("button#cancel").click(function() {
+      google.script.host.close();
+    });
+    
+  });
+  
+
+  function showError(msg){
+    var div = $('<span class="error">An error occurred. Please try again.</span>');
+    $('#message').empty().append(div);
+  }
+  
+
+  /**
+   * Callback function that populates the origin and destination selection
+   * boxes with user preferences from the server.
+   *
+   * @param {Object} languagePrefs The saved origin and destination languages.
+   */
+  function loadPreferences(prefs) {
+    $( "#select-h1" ).val(prefs.h1);
+    $( "#select-h2" ).val(prefs.h2);
+    $( "#select-h3" ).val(prefs.h3);
+    $( "#select-h4" ).val(prefs.h4);
+    $( "#select-h5" ).val(prefs.h5);
+    $( "#select-h6" ).val(prefs.h6);
+    $( "#select-delimiter" ).val(prefs.delimiter);
+    $( "#inherit" ).prop("checked", prefs.inherit);
+    $( "#trailing" ).prop("checked", prefs.trailing);
+    $( "#tabseparator" ).prop("checked", prefs.tabseparator);
+    $( "#pre" ).val(prefs.pre);
+    $( "#post" ).val(prefs.post);
+    
+    updatePreview();
+  }
+  
+  /**
+  * Update the preview field
+  */
+  
+  function updatePreview(){
+    var p = getFormValues();
+    $( "#preview-h1" ).html( p.pre + getNumbers(1,[0,1,0,0,0,0,0],p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing) + p.post );
+    $( "#preview-h2" ).html( p.pre + getNumbers(2,[0,1,1,0,0,0,0],p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing) + p.post );
+    $( "#preview-h3" ).html( p.pre + getNumbers(3,[0,1,1,1,0,0,0],p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing) + p.post );
+    $( "#preview-h4" ).html( p.pre + getNumbers(4,[0,1,1,1,1,0,0],p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing) + p.post );
+    $( "#preview-h5" ).html( p.pre + getNumbers(5,[0,1,1,1,1,1,0],p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing) + p.post );
+    $( "#preview-h6" ).html( p.pre + getNumbers(6,[0,1,1,1,1,1,1],p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing) + p.post );
+    $( "#preview-h1-2" ).html( p.pre + getNumbers(1,[0,2,0,0,0,0,0],p.h1,p.h2,p.h3,p.h4,p.h5,p.h6,p.inherit,p.delimiter,p.trailing) + p.post );
+  }
+  
+  /**
+  * Get form values
+  */
+  
+  function getFormValues(){
+    var prefs = {
+      h1: parseInt($( "#select-h1" ).val()),
+      h2: parseInt($( "#select-h2" ).val()),
+      h3: parseInt($( "#select-h3" ).val()),
+      h4: parseInt($( "#select-h4" ).val()),
+      h5: parseInt($( "#select-h5" ).val()),
+      h6: parseInt($( "#select-h6" ).val()),
+      delimiter: parseInt($( "#select-delimiter" ).val()),
+      inherit: $("#inherit").is(':checked'),
+      trailing: $("#trailing").is(':checked'),
+      pre: $( "#pre" ).val(),
+      post: $( "#post" ).val(),
+      tabseparator: $( "#tabseparator" ).is(':checked'),
+    };
+    return prefs;
+  }
+  
+</script>
+
