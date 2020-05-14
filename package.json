@@ -1,0 +1,23 @@
+{
+  "name": "heading-numbers",
+  "version": "1.0.0",
+  "description": "Google Docs add-on for adding any custom heading number. Development using [clasp](https://developers.google.com/apps-script/guides/clasp).",
+  "main": "Code.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@google/clasp": "^2.3.0"
+  },
+  "scripts": {
+    "clasp": "clasp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krilor/heading-numbers.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krilor/heading-numbers/issues"
+  },
+  "homepage": "https://github.com/krilor/heading-numbers#readme"
+}
